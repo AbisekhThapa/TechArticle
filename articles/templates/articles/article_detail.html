@@ -1,0 +1,31 @@
+{% extends 'base_layout.html' %} {% block content %}
+
+<div class="container detail">
+
+
+    <div class="container detail-title">
+        <h2>{{ article.title }}</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{{ article.thumb.url }}" class="img-responsive">
+            </div>
+
+            <div class="col-sm-8 ">
+                <p>{{ article.specs |safe }}</p>
+            </div>
+
+        </div>
+        <hr style="width: 100%;margin-left: -2% !important;margin-right: 25% !important;height:1px;border-width:1px;color:orange;background-color:orange;">
+    </div>
+
+    <div class="container detail-body">
+        <p>{{ article.body |safe }}</p>
+    </div>
+    <hr style="width: 100%;margin-left: 0% !important;margin-right: 25% !important;height:1px;border-width:1px;color:orange;background-color:orange;">
+    <p class="text-right"> <strong>Posted on:</strong> {{ article.onlydate |safe }}</p>
+</div>
+
+{% endblock %}
